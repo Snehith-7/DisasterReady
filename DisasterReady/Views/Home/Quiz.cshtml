@@ -1,0 +1,482 @@
+@{
+    ViewData["Title"] = "Disaster Safety Quiz";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="btn btn-outline-secondary d-inline-flex align-items-center gap-2">
+            <i class="bi bi-arrow-left"></i> Back to Dashboard
+        </a>
+        <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2">
+            <i class="bi bi-trophy-fill me-1"></i> Interactive Assessment
+        </span>
+    </div>
+
+    <div class="p-4 p-md-5 rounded-4 text-white mb-4 position-relative" style="background: linear-gradient(135deg, rgba(24, 34, 52, 0.9) 0%, rgba(17, 23, 36, 0.95) 100%); border: 1px solid var(--border-subtle);">
+        <span class="badge rounded-pill bg-warning text-dark fw-bold mb-2 px-3 py-1">CAMPUS READINESS CHALLENGE</span>
+        <h1 class="display-6 fw-bold text-white mb-2">Disaster Safety Quiz</h1>
+        <p class="fs-5 text-light opacity-90 mb-0" style="max-width: 720px;">
+            Test your survival reflexes across earthquakes, floods, fires, and cyclones. Complete all 12 questions (3 for each disaster type) to earn your verified readiness score.
+        </p>
+    </div>
+
+    <form id="quizForm">
+        <!-- ==========================================
+             SECTION 1: EARTHQUAKE SAFETY (Q1 - Q3)
+             ========================================== -->
+        <div class="d-flex align-items-center gap-2 mb-3 mt-4">
+            <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 rounded-pill">
+                <i class="bi bi-geo-alt-fill me-1"></i> Part 1 &bull; Earthquake Safety
+            </span>
+            <span class="text-secondary small">3 Questions</span>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 1 of 12</span>
+                <span class="text-secondary small">Earthquake Indoor Protocol</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">1. What is the globally recommended immediate action if you are indoors during an earthquake?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q1" value="a" required />
+                <span>Run outside as fast as possible through the hallway</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q1" value="b" />
+                <span>Drop, Cover, and Hold On beneath a sturdy table or desk</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q1" value="c" />
+                <span>Stand immediately in a doorway or take the nearest elevator</span>
+            </label>
+            <div id="feedback-q1" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 2 of 12</span>
+                <span class="text-secondary small">Structural Hazards</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">2. Why must you strictly avoid using elevators during or immediately after an earthquake?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q2" value="a" required />
+                <span>Elevators use too much electrical power during emergency events</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q2" value="b" />
+                <span>Power failures, counterweight shifts, and twisted cable rails can trap occupants inside the shaft</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q2" value="c" />
+                <span>Elevator doors automatically lock permanently whenever ground tremors occur</span>
+            </label>
+            <div id="feedback-q2" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 3 of 12</span>
+                <span class="text-secondary small">Outdoor Safety</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">3. If an earthquake strikes while you are outdoors on campus or in an urban area, what is your safest response?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q3" value="a" required />
+                <span>Rush toward the nearest tall building or glass overhang for overhead cover</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q3" value="b" />
+                <span>Move to an open area clear of buildings, power lines, and trees, then drop to the ground</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q3" value="c" />
+                <span>Climb on top of a car or elevated bridge structure</span>
+            </label>
+            <div id="feedback-q3" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 2: FLOOD SAFETY (Q4 - Q6)
+             ========================================== -->
+        <div class="d-flex align-items-center gap-2 mb-3 mt-5">
+            <span class="badge bg-info-subtle text-info fw-bold px-3 py-2 rounded-pill">
+                <i class="bi bi-water me-1"></i> Part 2 &bull; Flood Safety
+            </span>
+            <span class="text-secondary small">3 Questions</span>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 4 of 12</span>
+                <span class="text-secondary small">Inundation Awareness</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">4. What does the universal flood safety directive "Turn Around, Don't Drown" advise?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q4" value="a" required />
+                <span>Speed up your vehicle to power through standing water before it gets any deeper</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q4" value="b" />
+                <span>Never walk, swim, or drive through floodwater, as even 15–30 cm of water can knock you down or float a car</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q4" value="c" />
+                <span>Turn off headlights and wait inside your car in the middle of a flooded street</span>
+            </label>
+            <div id="feedback-q4" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 5 of 12</span>
+                <span class="text-secondary small">Water Hazards</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">5. Why is wading through standing floodwaters hazardous even when rain has stopped?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q5" value="a" required />
+                <span>Standing floodwater rapidly turns into solid ice within minutes</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q5" value="b" />
+                <span>It carries hidden sinkholes, sharp debris, bacterial contamination, and lethal currents from downed electric lines</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q5" value="c" />
+                <span>Water absorbs all atmospheric oxygen from the surrounding space</span>
+            </label>
+            <div id="feedback-q5" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 6 of 12</span>
+                <span class="text-secondary small">Vertical Evacuation</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">6. If rapidly rising floodwaters trap you inside a multi-story building, where should you seek refuge?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q6" value="a" required />
+                <span>The basement or ground floor storage areas</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q6" value="b" />
+                <span>A sealed attic space with no access hatch or window to the roof</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q6" value="c" />
+                <span>The highest habitable floor or accessible rooftop while carrying emergency signaling gear</span>
+            </label>
+            <div id="feedback-q6" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 3: FIRE SAFETY (Q7 - Q9)
+             ========================================== -->
+        <div class="d-flex align-items-center gap-2 mb-3 mt-5">
+            <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-2 rounded-pill">
+                <i class="bi bi-fire me-1"></i> Part 3 &bull; Fire Safety
+            </span>
+            <span class="text-secondary small">3 Questions</span>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 7 of 12</span>
+                <span class="text-secondary small">Smoke Evacuation</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">7. When escaping through a smoke-filled room or corridor, why must you crawl low to the floor?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q7" value="a" required />
+                <span>Floors are always completely fireproof and cool to the touch</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q7" value="b" />
+                <span>Superheated toxic gases and lethal carbon monoxide rise, leaving cooler, breathable air 30–60 cm above the floor</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q7" value="c" />
+                <span>It is easier to drag heavy suitcases and valuables while on all fours</span>
+            </label>
+            <div id="feedback-q7" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 8 of 12</span>
+                <span class="text-secondary small">Extinguisher Operation</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">8. What does the standard fire extinguisher operation acronym "PASS" stand for?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q8" value="a" required />
+                <span>Protect yourself, Alert occupants, Sprint outside, Seek medical triage</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q8" value="b" />
+                <span>Pull the pin, Aim at the base of the fire, Squeeze the lever, Sweep side-to-side</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q8" value="c" />
+                <span>Press the button, Air out the room, Spray top-down, Stop immediately</span>
+            </label>
+            <div id="feedback-q8" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 9 of 12</span>
+                <span class="text-secondary small">Doorway Assessment</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">9. What critical step should you always take before opening a closed door during a building fire?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q9" value="a" required />
+                <span>Kick open the door forcefully to ventilate any fumes</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q9" value="b" />
+                <span>Feel the door surface and metal knob with the back of your hand to check for radiant heat</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q9" value="c" />
+                <span>Splash water on the handle before turning it with both hands</span>
+            </label>
+            <div id="feedback-q9" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 4: CYCLONE SAFETY (Q10 - Q12)
+             ========================================== -->
+        <div class="d-flex align-items-center gap-2 mb-3 mt-5">
+            <span class="badge bg-warning-subtle text-warning fw-bold px-3 py-2 rounded-pill">
+                <i class="bi bi-wind me-1"></i> Part 4 &bull; Cyclone Safety
+            </span>
+            <span class="text-secondary small">3 Questions</span>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 10 of 12</span>
+                <span class="text-secondary small">Meteorological Phenomena</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">10. During a severe tropical cyclone, what critical hazard is associated with the "Eye of the Storm"?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q10" value="a" required />
+                <span>It indicates the cyclone has fully passed and it is safe to resume regular outdoor activities</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q10" value="b" />
+                <span>The calm is deceptive and temporary; violent gale-force winds and rains will abruptly resume from the opposite direction</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q10" value="c" />
+                <span>The atmospheric pressure drops so low that temperatures freeze instantly</span>
+            </label>
+            <div id="feedback-q10" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 11 of 12</span>
+                <span class="text-secondary small">Shelter Selection</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">11. Which location offers the safest refuge inside a campus or residential building during a cyclone?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q11" value="a" required />
+                <span>An interior room, central hallway, or reinforced bathroom on the lowest floor away from exterior windows</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q11" value="b" />
+                <span>A top-floor glass balcony or veranda to keep watch on the storm's progression</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q11" value="c" />
+                <span>A large garage or bay with wide rolling metal doors</span>
+            </label>
+            <div id="feedback-q11" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="comfort-card mb-4 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge quiz-step-badge">Question 12 of 12</span>
+                <span class="text-secondary small">Post-Landfall Hazards</span>
+            </div>
+            <h5 class="fw-bold text-white mb-3">12. Following cyclone landfall, why is approaching fallen electrical cables or nearby puddles extremely hazardous?</h5>
+            
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q12" value="a" required />
+                <span>Fallen electrical cables carry only harmless static charges</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q12" value="b" />
+                <span>Downed power lines may remain live and energize surrounding water, presenting fatal electrocution risks</span>
+            </label>
+            <label class="d-flex align-items-center gap-2 p-3 rounded-3 mb-2 kit-item-box">
+                <input type="radio" name="q12" value="c" />
+                <span>Power companies permanently disable all power generation following storms</span>
+            </label>
+            <div id="feedback-q12" class="mt-3 p-3 rounded-3 d-none small"></div>
+        </div>
+
+        <!-- Action Controls -->
+        <div class="d-flex flex-wrap align-items-center gap-3 pt-3">
+            <button type="submit" class="btn btn-amber-glow btn-lg fw-bold px-4 rounded-pill">
+                <i class="bi bi-send-check me-2"></i> Submit All 12 Answers
+            </button>
+
+            <button type="reset"
+                    id="resetButton"
+                    class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                <i class="bi bi-arrow-counterclockwise me-1"></i> Retake Quiz
+            </button>
+        </div>
+    </form>
+
+    <div id="result" class="alert mt-4 d-none rounded-4 p-4 shadow-lg" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+    const quizForm = document.getElementById("quizForm");
+    const result = document.getElementById("result");
+
+    const correctAnswers = {
+        q1: "b",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "b",
+        q6: "c",
+        q7: "b",
+        q8: "b",
+        q9: "b",
+        q10: "b",
+        q11: "a",
+        q12: "b"
+    };
+
+    const answerExplanations = {
+        q1: "Drop, Cover, and Hold On shields vital organs and head from falling fixtures, ceiling tiles, and shattering glass.",
+        q2: "Earthquake tremors twist elevator rails and sever municipal grids, creating lethal shaft entrapment hazards. Use stairs.",
+        q3: "Falling masonry, facade bricks, and snapping utility poles are the main outdoor dangers. Seek clear open ground.",
+        q4: "Just 15 cm of moving water can sweep an adult off their feet, and 30–60 cm can carry away cars and SUVs.",
+        q5: "Floodwaters frequently contain toxic runoff, sewage, submerged debris, and electrified currents from downed lines.",
+        q6: "Move to an upper floor or accessible roof for helicopter/boat visibility; avoid closed attics without roof egress.",
+        q7: "Smoke and carbon monoxide inhalation cause the vast majority of fire deaths. Cleaner, cooler air is 30–60 cm above the floor.",
+        q8: "PASS: Pull the safety pin, Aim low at the base of the fire, Squeeze the lever, and Sweep side to side.",
+        q9: "A warm door or knob indicates fire on the other side. Opening it can trigger explosive backdrafts or flashovers.",
+        q10: "The storm's eye is a temporary lull. Once it passes, peak destructive winds immediately strike from the reverse direction.",
+        q11: "Reinforced interior rooms without glass windows protect against extreme gale winds and projectile debris.",
+        q12: "Downed high-voltage lines often stay energized and electrify surrounding puddles with lethal voltages. Stay at least 10m away."
+    };
+
+    const answerTexts = {
+        q1: "Drop, Cover, and Hold On beneath a sturdy table or desk",
+        q2: "Power failures, counterweight shifts, and twisted cable rails can trap occupants inside the shaft",
+        q3: "Move to an open area clear of buildings, power lines, and trees, then drop to the ground",
+        q4: "Never walk, swim, or drive through floodwater, as even 15–30 cm of water can knock you down or float a car",
+        q5: "It carries hidden sinkholes, sharp debris, bacterial contamination, and lethal currents from downed electric lines",
+        q6: "The highest habitable floor or accessible rooftop while carrying emergency signaling gear",
+        q7: "Superheated toxic gases and lethal carbon monoxide rise, leaving cooler, breathable air 30–60 cm above the floor",
+        q8: "Pull the pin, Aim at the base of the fire, Squeeze the lever, Sweep side-to-side",
+        q9: "Feel the door surface and metal knob with the back of your hand to check for radiant heat",
+        q10: "The calm is deceptive and temporary; violent gale-force winds and rains will abruptly resume from the opposite direction",
+        q11: "An interior room, central hallway, or reinforced bathroom on the lowest floor away from exterior windows",
+        q12: "Downed power lines may remain live and energize surrounding water, presenting fatal electrocution risks"
+    };
+
+    quizForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(quizForm);
+        let score = 0;
+        const total = 12;
+
+        for (const question in correctAnswers) {
+            const selectedAnswer = formData.get(question);
+            const feedback = document.getElementById("feedback-" + question);
+
+            feedback.classList.remove("d-none", "text-success", "text-danger", "border", "border-success", "border-danger");
+            feedback.style.background = "";
+
+            if (selectedAnswer === correctAnswers[question]) {
+                score++;
+                feedback.classList.add("text-success", "border", "border-success");
+                feedback.style.background = "rgba(16, 185, 129, 0.1)";
+                feedback.innerHTML = `<strong>✓ Correct!</strong> ${answerExplanations[question]}`;
+            } else {
+                feedback.classList.add("text-danger", "border", "border-danger");
+                feedback.style.background = "rgba(239, 68, 68, 0.1)";
+                feedback.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer: <em>${answerTexts[question]}</em>. ${answerExplanations[question]}`;
+            }
+        }
+
+        result.classList.remove("d-none", "alert-success", "alert-warning", "alert-danger");
+
+        if (score >= 10) {
+            result.classList.add("alert-success");
+            result.innerHTML = `
+                <div class="d-flex align-items-center gap-3">
+                    <span class="fs-1">🏆</span>
+                    <div>
+                        <h4 class="alert-heading fw-bold mb-1">Outstanding Disaster Readiness! (${score}/${total})</h4>
+                        <p class="mb-0">You demonstrated exceptional emergency reflexes across all 4 major disaster scenarios. Review any missed points above.</p>
+                    </div>
+                </div>`;
+        } else if (score >= 7) {
+            result.classList.add("alert-warning");
+            result.innerHTML = `
+                <div class="d-flex align-items-center gap-3">
+                    <span class="fs-1">🎖️</span>
+                    <div>
+                        <h4 class="alert-heading fw-bold mb-1">Good Knowledge! (${score}/${total})</h4>
+                        <p class="mb-0">You understand fundamental safety protocols. Review the detailed feedback above to master key evacuation and survival reflexes.</p>
+                    </div>
+                </div>`;
+        } else {
+            result.classList.add("alert-danger");
+            result.innerHTML = `
+                <div class="d-flex align-items-center gap-3">
+                    <span class="fs-1">⚠️</span>
+                    <div>
+                        <h4 class="alert-heading fw-bold mb-1">Safety Review Recommended (${score}/${total})</h4>
+                        <p class="mb-0">Preparedness saves lives in critical moments. Review the Safety Guides on the dashboard, check the answers above, and retake the quiz.</p>
+                    </div>
+                </div>`;
+        }
+
+        result.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    document.getElementById("resetButton").addEventListener("click", function () {
+        result.classList.add("d-none");
+        result.innerHTML = "";
+
+        for (const question in correctAnswers) {
+            const feedback = document.getElementById("feedback-" + question);
+            feedback.innerHTML = "";
+            feedback.className = "mt-3 p-3 rounded-3 d-none small";
+            feedback.style.background = "";
+        }
+    });
+</script>

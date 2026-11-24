@@ -1,0 +1,388 @@
+
+@{
+    ViewData["Title"] = "Emergency Contacts";
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="btn btn-outline-secondary d-inline-flex align-items-center gap-2">
+            <i class="bi bi-arrow-left"></i> Back to Dashboard
+        </a>
+        <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-2 border border-danger-subtle">
+            <i class="bi bi-broadcast me-1"></i> Rapid Response Directory
+        </span>
+    </div>
+
+    <div class="p-4 p-md-5 rounded-4 text-white mb-4 position-relative" style="background: linear-gradient(135deg, rgba(24, 34, 52, 0.9) 0%, rgba(17, 23, 36, 0.95) 100%); border: 1px solid var(--border-subtle);">
+        <span class="badge rounded-pill bg-danger text-white fw-bold mb-2 px-3 py-1">24/7 OFFICIAL INDIAN HELPLINE DIRECTORY</span>
+        <h1 class="display-6 fw-bold text-white mb-2">Emergency Contacts & SOS Hub</h1>
+        <p class="fs-5 text-light opacity-90 mb-0" style="max-width: 740px;">
+            Immediate one-touch access to official Government of India disaster management authorities, NDRF rescue battalions, emergency medical services, and specialized national crisis helplines.
+        </p>
+    </div>
+
+    <div class="d-flex align-items-center gap-3 p-3 mb-4 rounded-4" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); color: #fde68a;">
+        <div class="fs-3 text-warning flex-shrink-0">
+            <i class="bi bi-exclamation-octagon-fill"></i>
+        </div>
+        <div class="small">
+            <strong class="text-white">Emergency First Rule:</strong>
+            If there is immediate physical danger, structural collapse, or fire, evacuate to open ground first. Once secure, dial <strong>112</strong> or the appropriate specialized emergency battalion below.
+        </div>
+    </div>
+
+    <!-- ========================================================
+         CATEGORY 1: APEX NATIONAL DISASTER AUTHORITIES
+         ======================================================== -->
+    <div class="d-flex align-items-center justify-content-between mb-3 mt-4">
+        <div>
+            <h2 class="h4 fw-bold text-white mb-1">
+                <i class="bi bi-shield-shaded text-danger me-2"></i>Apex National Disaster Authorities (India)
+            </h2>
+            <p class="text-secondary small mb-0">Statutory central & state disaster management task forces for large-scale emergencies.</p>
+        </div>
+        <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-1 rounded-pill">Priority Dispatch</span>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <!-- National Unified 112 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="comfort-card h-100 p-4 position-relative" style="border-top: 4px solid #ef4444 !important;">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <span class="fs-2">🚨</span>
+                    <span class="badge bg-danger text-white small px-2 py-1 rounded-pill">Unified Helpline</span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-1">National Emergency Number</h3>
+                <p class="text-secondary small mb-3">
+                    Pan-India single emergency response support system (ERSS) integrating Police, Fire, Ambulance, and Disaster Management.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold text-danger">112</span>
+                    <a href="tel:112" class="btn btn-sm btn-danger px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 112
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NDRF -->
+        <div class="col-md-6 col-lg-4">
+            <div class="comfort-card h-100 p-4 position-relative" style="border-top: 4px solid #f59e0b !important;">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <span class="fs-2">🛡️</span>
+                    <span class="badge bg-warning text-dark fw-bold small px-2 py-1 rounded-pill">NDRF 24/7 HQ</span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-1">NDRF Rescue Control Room</h3>
+                <p class="text-secondary small mb-3">
+                    National Disaster Response Force apex command for specialized tactical rescue during earthquakes, severe floods, and cyclones.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fs-3 fw-bold text-warning">1078</span>
+                        <a href="tel:1078" class="btn btn-sm btn-amber-glow px-3 py-1 rounded-pill fw-bold">
+                            <i class="bi bi-telephone-fill me-1"></i> Toll-Free
+                        </a>
+                    </div>
+                    <div class="small text-secondary d-flex justify-content-between">
+                        <span>Direct Control:</span>
+                        <a href="tel:01124363260" class="text-light text-decoration-none fw-semibold">011-24363260</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NDMA -->
+        <div class="col-md-6 col-lg-4">
+            <div class="comfort-card h-100 p-4 position-relative" style="border-top: 4px solid #3b82f6 !important;">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <span class="fs-2">🏛️</span>
+                    <span class="badge bg-primary text-white small px-2 py-1 rounded-pill">Apex Authority</span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-1">NDMA National Control Room</h3>
+                <p class="text-secondary small mb-3">
+                    National Disaster Management Authority (Ministry of Home Affairs) for national coordination and inter-agency disaster relief.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fs-4 fw-bold text-primary">011-26701728</span>
+                        <a href="tel:01126701728" class="btn btn-sm btn-outline-primary px-3 py-1 rounded-pill fw-bold">
+                            <i class="bi bi-telephone-fill me-1"></i> Call HQ
+                        </a>
+                    </div>
+                    <div class="small text-secondary d-flex justify-content-between">
+                        <span>Alternate Line:</span>
+                        <a href="tel:01126701729" class="text-light text-decoration-none fw-semibold">011-26701729</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SDMA State Emergency Helpline -->
+        <div class="col-md-6 col-lg-4">
+            <div class="comfort-card h-100 p-4" style="border-top: 4px solid #10b981 !important;">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <span class="fs-2">🏢</span>
+                    <span class="badge bg-success text-white small px-2 py-1 rounded-pill">State Level</span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-1">State Disaster Helpline (SDMA)</h3>
+                <p class="text-secondary small mb-3">
+                    State Emergency Operation Centre (SEOC) connecting directly to State Disaster Management Authorities and SDRF teams.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold text-success">1070</span>
+                    <a href="tel:1070" class="btn btn-sm btn-outline-success px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 1070
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DDMA District Emergency Helpline -->
+        <div class="col-md-6 col-lg-4">
+            <div class="comfort-card h-100 p-4" style="border-top: 4px solid #8b5cf6 !important;">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <span class="fs-2">📍</span>
+                    <span class="badge bg-purple-subtle text-light small px-2 py-1 rounded-pill border border-secondary-subtle" style="background: rgba(139, 92, 246, 0.2);">District EOC</span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-1">District Disaster Helpline (DDMA)</h3>
+                <p class="text-secondary small mb-3">
+                    Direct communication to your District Magistrate / Collectorate emergency operations center for localized flood or storm relief.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold" style="color: #a78bfa;">1077</span>
+                    <a href="tel:1077" class="btn btn-sm btn-outline-light px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 1077
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coast Guard -->
+        <div class="col-md-6 col-lg-4">
+            <div class="comfort-card h-100 p-4" style="border-top: 4px solid #06b6d4 !important;">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <span class="fs-2">⚓</span>
+                    <span class="badge bg-info text-dark fw-bold small px-2 py-1 rounded-pill">Maritime & Cyclone</span>
+                </div>
+                <h3 class="h5 fw-bold text-white mb-1">Indian Coast Guard (ICG)</h3>
+                <p class="text-secondary small mb-3">
+                    Maritime Search and Rescue (SAR) coordination, offshore cyclone evacuations, and fisherman safety warnings.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold text-info">1554</span>
+                    <a href="tel:1554" class="btn btn-sm btn-outline-info px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 1554
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         CATEGORY 2: PRIMARY FRONTLINE RESPONDERS
+         ======================================================== -->
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <div>
+            <h2 class="h4 fw-bold text-white mb-1">
+                <i class="bi bi-telephone-inbound-fill text-warning me-2"></i>Primary First Responders (India)
+            </h2>
+            <p class="text-secondary small mb-0">Dedicated toll-free national emergency response agencies.</p>
+        </div>
+        <span class="badge bg-warning-subtle text-warning fw-bold px-3 py-1 rounded-pill">Instant Response</span>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <!-- Fire -->
+        <div class="col-md-4">
+            <div class="comfort-card h-100 p-4">
+                <div class="fs-1 mb-2">🚒</div>
+                <h3 class="h5 fw-bold text-white mb-1">Fire and Rescue Services</h3>
+                <p class="text-secondary small mb-3">
+                    Immediate dispatch for structure fires, chemical explosions, hazardous leaks, and debris rescue.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold text-danger">101</span>
+                    <a href="tel:101" class="btn btn-sm btn-danger px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 101
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ambulance -->
+        <div class="col-md-4">
+            <div class="comfort-card h-100 p-4">
+                <div class="fs-1 mb-2">🚑</div>
+                <h3 class="h5 fw-bold text-white mb-1">Ambulance & Trauma Care</h3>
+                <p class="text-secondary small mb-3">
+                    Emergency Medical Response (EMRI), advanced life-support ambulances, and critical transit.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold text-success">108 / 102</span>
+                    <a href="tel:108" class="btn btn-sm btn-success px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 108
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Police -->
+        <div class="col-md-4">
+            <div class="comfort-card h-100 p-4">
+                <div class="fs-1 mb-2">👮</div>
+                <h3 class="h5 fw-bold text-white mb-1">Police Control Room</h3>
+                <p class="text-secondary small mb-3">
+                    Perimeter containment, crowd control, traffic diversion during evacuations, and campus security liaison.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle d-flex justify-content-between align-items-center">
+                    <span class="fs-2 fw-bold text-primary">100 / 112</span>
+                    <a href="tel:100" class="btn btn-sm btn-primary px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-telephone-fill me-1"></i> Call 100
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         CATEGORY 3: SPECIALIZED DISASTER & CRISIS HELPLINES
+         ======================================================== -->
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <div>
+            <h2 class="h4 fw-bold text-white mb-1">
+                <i class="bi bi-life-preserver text-info me-2"></i>Specialized National Helplines & Monitoring
+            </h2>
+            <p class="text-secondary small mb-0">Government agencies monitoring flood forecasting, vulnerable citizen safety, and transit crises.</p>
+        </div>
+        <span class="badge bg-info-subtle text-info fw-bold px-3 py-1 rounded-pill">24/7 Support</span>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <!-- Central Water Commission (Flood) -->
+        <div class="col-md-6 col-lg-3">
+            <div class="comfort-card h-100 p-3">
+                <div class="fs-2 mb-2">🌊</div>
+                <h4 class="h6 fw-bold text-white mb-1">CWC Flood Control</h4>
+                <p class="text-secondary small mb-2" style="font-size: 0.8rem;">
+                    Central Water Commission national flood forecast and dam outflow advisory.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle">
+                    <div class="fw-bold text-info small mb-1">011-26106523</div>
+                    <a href="tel:01126106523" class="btn btn-xs btn-outline-info w-100 py-1 rounded-pill small">
+                        <i class="bi bi-telephone me-1"></i> Call CWC
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Women Safety Helpline -->
+        <div class="col-md-6 col-lg-3">
+            <div class="comfort-card h-100 p-3">
+                <div class="fs-2 mb-2">👩‍🦰</div>
+                <h4 class="h6 fw-bold text-white mb-1">Women Helpline</h4>
+                <p class="text-secondary small mb-2" style="font-size: 0.8rem;">
+                    24/7 dedicated support and transit safety for women in distress or displaced in shelters.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle">
+                    <div class="fw-bold text-danger small mb-1">1091 / 181</div>
+                    <a href="tel:1091" class="btn btn-xs btn-outline-danger w-100 py-1 rounded-pill small">
+                        <i class="bi bi-telephone me-1"></i> Call 1091
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Childline -->
+        <div class="col-md-6 col-lg-3">
+            <div class="comfort-card h-100 p-3">
+                <div class="fs-2 mb-2">🧒</div>
+                <h4 class="h6 fw-bold text-white mb-1">National Childline</h4>
+                <p class="text-secondary small mb-2" style="font-size: 0.8rem;">
+                    24-hour emergency response for unaccompanied minors and child rescue in disaster zones.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle">
+                    <div class="fw-bold text-warning small mb-1">1098</div>
+                    <a href="tel:1098" class="btn btn-xs btn-outline-warning w-100 py-1 rounded-pill small">
+                        <i class="bi bi-telephone me-1"></i> Call 1098
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Railway Emergency -->
+        <div class="col-md-6 col-lg-3">
+            <div class="comfort-card h-100 p-3">
+                <div class="fs-2 mb-2">🚆</div>
+                <h4 class="h6 fw-bold text-white mb-1">Railway Disaster</h4>
+                <p class="text-secondary small mb-2" style="font-size: 0.8rem;">
+                    Indian Railways integrated customer & crisis helpline for train accidents and station emergencies.
+                </p>
+                <div class="mt-auto pt-2 border-top border-secondary-subtle">
+                    <div class="fw-bold text-success small mb-1">139</div>
+                    <a href="tel:139" class="btn btn-xs btn-outline-success w-100 py-1 rounded-pill small">
+                        <i class="bi bi-telephone me-1"></i> Call 139
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         CATEGORY 4: CAMPUS & INSTITUTIONAL SAFETY ROLES
+         ======================================================== -->
+    <h2 class="h4 fw-bold text-white mb-3">Campus & Institutional Safety Coordinators</h2>
+
+    <div class="comfort-card p-4 mb-5">
+        <p class="text-light opacity-90 mb-3">
+            Educational institutions should maintain a live internal safety phone tree verified at the start of each semester. Campus administrators must designate lead marshals for the following roles:
+        </p>
+
+        <div class="row g-3">
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                    <div class="fw-bold text-warning mb-1"><i class="bi bi-shield-lock me-1"></i> Campus Security Command</div>
+                    <div class="small text-secondary">Gate perimeters, lock-down protocols & emergency lighting.</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                    <div class="fw-bold text-info mb-1"><i class="bi bi-person-badge me-1"></i> Disaster Safety Officer</div>
+                    <div class="small text-secondary">Coordinates building evacuations and SDMA/NDRF liaisons.</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                    <div class="fw-bold text-danger mb-1"><i class="bi bi-hospital me-1"></i> Campus Health Centre</div>
+                    <div class="small text-secondary">First-aid triage, burn dressing & ambulance dispatch coordination.</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                    <div class="fw-bold text-primary mb-1"><i class="bi bi-flag me-1"></i> Muster Point Supervisor</div>
+                    <div class="small text-secondary">Headcounts, student roll-call & missing person reporting.</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                    <div class="fw-bold text-success mb-1"><i class="bi bi-lightning-charge me-1"></i> Facility Maintenance Chief</div>
+                    <div class="small text-secondary">Rapid shutoff of main gas, high-voltage substations & water mains.</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                    <div class="fw-bold text-secondary mb-1"><i class="bi bi-megaphone me-1"></i> Campus Public Address Officer</div>
+                    <div class="small text-secondary">Broadcasts calm official directives to all dormitories & classrooms.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4 p-3 rounded-3" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); color: #6ee7b7; font-size: 0.85rem;">
+            <i class="bi bi-info-circle-fill fs-5 flex-shrink-0"></i>
+            <span>Institutional Administrators: Customize these directory cards with your institution's specific internal intercom extensions and local municipal hospital numbers.</span>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DisasterReady</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap & Bootstrap Icons -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Site Custom Styles -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DisasterReady.styles.css" asp-append-version="true" />
+</head>
+<body class="d-flex flex-column min-vh-100 site-body-ambient">
+    <!-- Calm Ambient Status Bar -->
+    <div class="calm-status-bar py-2">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2 small text-muted-subtle">
+                <span class="serene-dot"></span>
+                <span>Campus Safety Network &bull; Self-Paced Emergency Readiness Portal</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge rounded-pill status-verified-badge px-3 py-1 small">
+                    <i class="bi bi-shield-check text-success me-1"></i> Verified Safety Protocols
+                </span>
+                <a asp-controller="Home" asp-action="Emergency" class="badge rounded-pill bg-danger-subtle text-danger border border-danger-subtle px-3 py-1 text-decoration-none small">
+                    <i class="bi bi-telephone-fill me-1"></i> Emergency: 112
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark nav-ambient py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="brand-glyph">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L3 6V11C3 16.5 6.8 21.7 12 23C17.2 21.7 21 16.5 21 11V6L12 2Z" fill="#0a0e17"/>
+                            <path d="M12 4.2L5 7.4V11.2C5 15.6 7.9 19.8 12 21C16.1 19.8 19 15.6 19 11.2V7.4L12 4.2Z" fill="#182234"/>
+                            <path d="M7.5 12H9.5L11 8.5L13 15.5L14.5 12H16.5" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="6.2" r="1.3" fill="#10b981"/>
+                        </svg>
+                    </span>
+                    <span class="brand-text">Disaster<span class="text-amber">Ready</span></span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-lg-1">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom @(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-custom dropdown-toggle @(ViewContext.RouteData.Values["Action"]?.ToString() == "Learn" ? "active" : "")" href="#" id="learnDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Safety Guides
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark border-0 shadow-lg p-2" aria-labelledby="learnDropdown">
+                                <li><a class="dropdown-item rounded-3 py-2" asp-controller="Home" asp-action="Learn" asp-route-topic="earthquake">🌍 Earthquake Protection</a></li>
+                                <li><a class="dropdown-item rounded-3 py-2" asp-controller="Home" asp-action="Learn" asp-route-topic="flood">🌊 Flood Safety</a></li>
+                                <li><a class="dropdown-item rounded-3 py-2" asp-controller="Home" asp-action="Learn" asp-route-topic="fire">🔥 Fire Evacuation</a></li>
+                                <li><a class="dropdown-item rounded-3 py-2" asp-controller="Home" asp-action="Learn" asp-route-topic="cyclone">🌀 Cyclone Preparedness</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom @(ViewContext.RouteData.Values["Action"]?.ToString() == "Quiz" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Quiz">
+                                Safety Quiz
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom @(ViewContext.RouteData.Values["Action"]?.ToString() == "Emergency" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Emergency">
+                                Emergency Directory
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex align-items-center gap-2">
+                        <a asp-controller="Home" asp-action="Emergency" class="btn btn-amber-glow btn-sm fw-semibold px-4 py-2 rounded-pill">
+                            <i class="bi bi-shield-shaded me-1"></i> Helpline 112
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main role="main" class="flex-grow-1">
+        @RenderBody()
+    </main>
+
+    <!-- Modern Serene Footer -->
+    <footer class="footer-ambient text-white pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-5 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="brand-glyph">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L3 6V11C3 16.5 6.8 21.7 12 23C17.2 21.7 21 16.5 21 11V6L12 2Z" fill="#0a0e17"/>
+                                <path d="M12 4.2L5 7.4V11.2C5 15.6 7.9 19.8 12 21C16.1 19.8 19 15.6 19 11.2V7.4L12 4.2Z" fill="#182234"/>
+                                <path d="M7.5 12H9.5L11 8.5L13 15.5L14.5 12H16.5" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="6.2" r="1.3" fill="#10b981"/>
+                            </svg>
+                        </span>
+                        <span class="fs-4 fw-bold text-white">Disaster<span class="text-amber">Ready</span></span>
+                    </div>
+                    <p class="text-secondary small mb-3" style="max-width: 420px; line-height: 1.6;">
+                        A thoughtful disaster preparedness education platform designed for educational institutions. Promoting calmness, structured guidance, and confidence in emergency response.
+                    </p>
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-dark-card border border-secondary-subtle">
+                        <span class="serene-dot-green"></span>
+                        <span class="small text-light">Student Readiness Experience</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-light fw-bold text-uppercase mb-3 small tracking-wider">Safety Modules</h6>
+                    <ul class="list-unstyled footer-links small">
+                        <li class="mb-2"><a asp-controller="Home" asp-action="Learn" asp-route-topic="earthquake">Earthquake Protocol</a></li>
+                        <li class="mb-2"><a asp-controller="Home" asp-action="Learn" asp-route-topic="flood">Flood Safety Guide</a></li>
+                        <li class="mb-2"><a asp-controller="Home" asp-action="Learn" asp-route-topic="fire">Fire Evacuation</a></li>
+                        <li class="mb-2"><a asp-controller="Home" asp-action="Learn" asp-route-topic="cyclone">Cyclone Precautions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="text-light fw-bold text-uppercase mb-3 small tracking-wider">Verified Emergency Numbers</h6>
+                    <div class="footer-card p-3 rounded-4 mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-light small">National Emergency:</span>
+                            <span class="badge bg-danger rounded-pill px-3 py-1 fw-bold">112</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-light small">Disaster Response (NDRF):</span>
+                            <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold">1078</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-light small">Medical / Ambulance:</span>
+                            <span class="badge bg-info text-dark rounded-pill px-3 py-1 fw-bold">108</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary-subtle my-4" />
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-secondary small">
+                <p class="mb-2 mb-sm-0">&copy; 2026 DisasterReady. Designed for Comfort, Clarity, and Preparedness.</p>
+                <div>
+                    <a asp-controller="Home" asp-action="Privacy" class="text-secondary text-decoration-none me-3">Privacy</a>
+                    <a asp-controller="Home" asp-action="Emergency" class="text-secondary text-decoration-none">Emergency Directory</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

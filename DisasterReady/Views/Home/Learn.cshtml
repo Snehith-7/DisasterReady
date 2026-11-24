@@ -1,0 +1,136 @@
+@{
+    ViewData["Title"] = ViewBag.Title;
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="btn btn-outline-secondary d-inline-flex align-items-center gap-2">
+            <i class="bi bi-arrow-left"></i> Back to Dashboard
+        </a>
+        <a asp-controller="Home"
+           asp-action="Quiz"
+           class="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-1">
+            <i class="bi bi-patch-question"></i> Test Knowledge in Quiz
+        </a>
+    </div>
+
+    <!-- Header Banner -->
+    <div class="p-4 p-md-5 mb-4 position-relative rounded-4" style="background: linear-gradient(135deg, rgba(24, 34, 52, 0.9) 0%, rgba(17, 23, 36, 0.95) 100%); border: 1px solid var(--border-subtle);">
+        <div class="d-flex align-items-center gap-3 mb-2">
+            <span class="fs-1">@ViewBag.Icon</span>
+            <div>
+                <span class="badge rounded-pill bg-warning text-dark fw-bold text-uppercase px-3 py-1">Official Protocol</span>
+                <h1 class="display-6 fw-bold text-white mb-0 mt-1">@ViewBag.Title</h1>
+            </div>
+        </div>
+        <p class="fs-5 text-light opacity-90 mb-0 mt-2" style="max-width: 760px;">
+            @ViewBag.Description
+        </p>
+    </div>
+
+    <!-- Reminder Box -->
+    <div class="d-flex align-items-center gap-3 p-3 mb-4 rounded-4" style="background: rgba(14, 165, 233, 0.08); border: 1px solid rgba(14, 165, 233, 0.25); color: #bae6fd;">
+        <div class="fs-3 text-info flex-shrink-0">
+            <i class="bi bi-shield-fill-exclamation"></i>
+        </div>
+        <div class="small">
+            <strong class="text-white">Institutional Directive:</strong>
+            Follow emergency instructions issued by campus disaster marshals, NDMA/SDMA emergency channels, and local civil defense authorities.
+        </div>
+    </div>
+
+    <!-- 3-Phase Emergency Timeline -->
+    <div class="row g-4">
+
+        <!-- Before -->
+        <div class="col-md-4">
+            <div class="comfort-card h-100 p-4" style="border-top: 4px solid #0284c7 !important;">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-1">PHASE 1</span>
+                    <i class="bi bi-calendar-check fs-4 text-primary"></i>
+                </div>
+                <h2 class="h4 fw-bold text-primary mb-2">
+                    Before
+                </h2>
+                <p class="text-secondary small mb-3">
+                    Proactive mitigation & campus preparations.
+                </p>
+
+                <ul class="list-unstyled mb-0" style="font-size: 0.9rem; line-height: 1.6;">
+                    @foreach (string item in ViewBag.Before)
+                    {
+                        <li class="mb-3 d-flex align-items-start gap-2 text-light" style="opacity: 0.92;">
+                            <i class="bi bi-check-circle-fill text-primary mt-1 flex-shrink-0"></i>
+                            <span>@item</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- During -->
+        <div class="col-md-4">
+            <div class="comfort-card h-100 p-4" style="border-top: 4px solid #ef4444 !important;">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-1">PHASE 2</span>
+                    <i class="bi bi-lightning-charge fs-4 text-danger"></i>
+                </div>
+                <h2 class="h4 fw-bold text-danger mb-2">
+                    During
+                </h2>
+                <p class="text-secondary small mb-3">
+                    Immediate life safety & survival reactions.
+                </p>
+
+                <ul class="list-unstyled mb-0" style="font-size: 0.9rem; line-height: 1.6;">
+                    @foreach (string item in ViewBag.During)
+                    {
+                        <li class="mb-3 d-flex align-items-start gap-2 text-light" style="opacity: 0.92;">
+                            <i class="bi bi-exclamation-triangle-fill text-danger mt-1 flex-shrink-0"></i>
+                            <span>@item</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- After -->
+        <div class="col-md-4">
+            <div class="comfort-card h-100 p-4" style="border-top: 4px solid #10b981 !important;">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-success-subtle text-success fw-bold px-3 py-1">PHASE 3</span>
+                    <i class="bi bi-heart-pulse fs-4 text-success"></i>
+                </div>
+                <h2 class="h4 fw-bold text-success mb-2">
+                    After
+                </h2>
+                <p class="text-secondary small mb-3">
+                    Safe evacuation, headcounts & medical recovery.
+                </p>
+
+                <ul class="list-unstyled mb-0" style="font-size: 0.9rem; line-height: 1.6;">
+                    @foreach (string item in ViewBag.After)
+                    {
+                        <li class="mb-3 d-flex align-items-start gap-2 text-light" style="opacity: 0.92;">
+                            <i class="bi bi-patch-check-fill text-success mt-1 flex-shrink-0"></i>
+                            <span>@item</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="btn btn-amber-glow btn-lg fw-bold px-4 rounded-pill shadow-sm">
+            &larr; Return to Dashboard
+        </a>
+    </div>
+
+</div>

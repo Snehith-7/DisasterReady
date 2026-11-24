@@ -1,0 +1,10 @@
+## Visual Studio & .NET Core
+[Bb]in/
+[Oo]bj/
+publish/
+*.user
+*.suo
+.vs/
+*.zip
+.DS_Store
+Thumbs.db

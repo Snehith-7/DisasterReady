@@ -1,0 +1,404 @@
+@{
+    ViewData["Title"] = "Disaster Preparedness Education System";
+}
+
+<!-- Hero Section: Calm, Aesthetic, and Serene -->
+<section class="hero-serene">
+    <!-- Ambient Radial Glow -->
+    <div class="hero-ambient-glow"></div>
+
+    <!-- Signature Watermark Typography (Inspired by Reel technique) -->
+    <div class="hero-watermark">Disaster Ready</div>
+
+    <div class="container hero-content-layer">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-9">
+                <!-- Pill Badge -->
+                <div class="d-inline-block mb-3 rise-1">
+                    <span class="hero-pill-badge">
+                        <span class="serene-dot"></span>
+                        Calm • Structured • Prepared
+                    </span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="mb-3 rise-2">
+                    Preparedness Made <br class="d-none d-md-block" />
+                    <span class="text-amber">Calm, Clear</span> & Actionable.
+                </h1>
+
+                <!-- Subheading -->
+                <p class="hero-lead mx-auto mb-4 rise-3">
+                    A student-centered safety education portal for schools and colleges. Master essential disaster responses, explore comprehensive guidelines, and build confidence before an emergency strikes.
+                </p>
+
+                <!-- Actions -->
+                <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 rise-4">
+                    <a href="#safety-modules" class="btn btn-amber-glow btn-lg px-4 py-3 rounded-pill fw-semibold">
+                        <i class="bi bi-book me-2"></i>Explore Safety Guides
+                    </a>
+                    <a asp-controller="Home" asp-action="Quiz" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-semibold border-secondary-subtle">
+                        <i class="bi bi-patch-question me-2"></i>Safety Quiz
+                    </a>
+                    <a asp-controller="Home" asp-action="Emergency" class="btn btn-dark btn-lg px-4 py-3 rounded-pill fw-semibold border border-secondary-subtle">
+                        <i class="bi bi-telephone-outbound me-2"></i>Helpline 112
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Comfortable Metric Highlights -->
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="ambient-stat-card h-100">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="text-secondary small fw-bold text-uppercase">01 &bull; Curriculum</span>
+                        <span class="text-amber fs-4"><i class="bi bi-mortarboard-fill"></i></span>
+                    </div>
+                    <h3 class="h5 fw-bold text-white mb-1">4 Core Disciplines</h3>
+                    <p class="text-secondary small mb-0">
+                        Earthquake, Flood, Fire Safety, and Cyclone protocols with step-by-step Before, During, and After instructions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="ambient-stat-card h-100">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="text-secondary small fw-bold text-uppercase">02 &bull; Interactive</span>
+                        <span class="text-success fs-4"><i class="bi bi-check2-circle"></i></span>
+                    </div>
+                    <h3 class="h5 fw-bold text-white mb-1">Go-Bag Readiness</h3>
+                    <p class="text-secondary small mb-0">
+                        An interactive 72-hour survival kit builder that tracks essential personal supplies and saves your progress.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="ambient-stat-card h-100">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="text-secondary small fw-bold text-uppercase">03 &bull; Instant Access</span>
+                        <span class="text-danger fs-4"><i class="bi bi-shield-fill-check"></i></span>
+                    </div>
+                    <h3 class="h5 fw-bold text-white mb-1">24/7 Verified Safety</h3>
+                    <p class="text-secondary small mb-0">
+                        Immediate access to national emergency number 112, NDRF helplines, and campus evacuation principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Container for Guided Modules & Interactive Content -->
+<div class="container py-5">
+
+    <!-- Section 1: Disaster Safety Guides -->
+    <section id="safety-modules" class="mb-5 pt-3">
+        <div class="mb-4 text-center text-md-start">
+            <span class="section-label">Core Knowledge</span>
+            <h2 class="h2 fw-bold text-white mb-2">Essential Safety Guides</h2>
+            <p class="text-secondary mb-0" style="max-width: 620px;">
+                Clear, organized survival procedures tailored for students and staff. Each guide outlines protective actions across all three disaster phases.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Earthquake -->
+            <div class="col-md-6 col-lg-3">
+                <div class="comfort-card h-100">
+                    <div class="comfort-glyph">
+                        🌍
+                    </div>
+                    <span class="comfort-pill comfort-pill-red mb-3">
+                        Structural
+                    </span>
+                    <h3 class="h5 fw-bold text-white mb-2">Earthquake Safety</h3>
+                    <p class="text-secondary small flex-grow-1">
+                        Learn immediate "Drop, Cover, and Hold On" techniques, identifying safe indoor spots, and safely navigating aftershocks.
+                    </p>
+                    <div class="pt-3 border-top border-secondary-subtle mt-2">
+                        <a asp-controller="Home" asp-action="Learn" asp-route-topic="earthquake" class="btn btn-sm btn-outline-light w-100 rounded-pill py-2">
+                            Explore Guide &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flood -->
+            <div class="col-md-6 col-lg-3">
+                <div class="comfort-card h-100">
+                    <div class="comfort-glyph">
+                        🌊
+                    </div>
+                    <span class="comfort-pill comfort-pill-blue mb-3">
+                        Hydrological
+                    </span>
+                    <h3 class="h5 fw-bold text-white mb-2">Flood Safety</h3>
+                    <p class="text-secondary small flex-grow-1">
+                        Recognize warning signals, prepare safe evacuation to higher levels, and avoid the hazards of moving floodwaters.
+                    </p>
+                    <div class="pt-3 border-top border-secondary-subtle mt-2">
+                        <a asp-controller="Home" asp-action="Learn" asp-route-topic="flood" class="btn btn-sm btn-outline-light w-100 rounded-pill py-2">
+                            Explore Guide &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fire -->
+            <div class="col-md-6 col-lg-3">
+                <div class="comfort-card h-100">
+                    <div class="comfort-glyph">
+                        🔥
+                    </div>
+                    <span class="comfort-pill comfort-pill-amber mb-3">
+                        Campus Vital
+                    </span>
+                    <h3 class="h5 fw-bold text-white mb-2">Fire Evacuation</h3>
+                    <p class="text-secondary small flex-grow-1">
+                        Master clear stairway evacuation, staying low beneath smoke, sounding building alarms, and campus assembly areas.
+                    </p>
+                    <div class="pt-3 border-top border-secondary-subtle mt-2">
+                        <a asp-controller="Home" asp-action="Learn" asp-route-topic="fire" class="btn btn-sm btn-outline-light w-100 rounded-pill py-2">
+                            Explore Guide &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cyclone -->
+            <div class="col-md-6 col-lg-3">
+                <div class="comfort-card h-100">
+                    <div class="comfort-glyph">
+                        🌀
+                    </div>
+                    <span class="comfort-pill comfort-pill-purple mb-3">
+                        Meteorological
+                    </span>
+                    <h3 class="h5 fw-bold text-white mb-2">Cyclone Safety</h3>
+                    <p class="text-secondary small flex-grow-1">
+                        Understand severe weather forecasts, securing windows, emergency power reserves, and identifying sturdy storm shelters.
+                    </p>
+                    <div class="pt-3 border-top border-secondary-subtle mt-2">
+                        <a asp-controller="Home" asp-action="Learn" asp-route-topic="cyclone" class="btn btn-sm btn-outline-light w-100 rounded-pill py-2">
+                            Explore Guide &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Mindful Emergency Go-Bag Checklist -->
+    <section class="calm-checklist-box mb-5">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+                <span class="section-label mb-2 d-inline-block">Personal Preparation</span>
+                <h2 class="h3 fw-bold text-white mb-3">72-Hour Emergency Go-Bag</h2>
+                <p class="text-secondary small mb-4" style="line-height: 1.6;">
+                    Keeping an emergency bag ready brings peace of mind. Check off items as you pack them. Your progress is saved automatically so you can continue anytime.
+                </p>
+
+                <!-- Readiness Progress Bar -->
+                <div class="p-3 rounded-4 bg-dark-card border border-secondary-subtle mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="small text-light fw-medium">Your Readiness Score:</span>
+                        <span id="kitItemCount" class="text-amber fw-bold small">0 of 8 items (0%)</span>
+                    </div>
+                    <div class="kit-progress-wrapper mb-2">
+                        <div id="kitProgressBar" class="kit-progress-bar"></div>
+                    </div>
+                    <div id="kitStatusMessage" class="text-secondary small">
+                        Click items to pack your essential 72-hour emergency go-bag.
+                    </div>
+                </div>
+
+                <button id="resetKitBtn" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1">
+                    <i class="bi bi-arrow-counterclockwise me-1"></i> Reset Checklist
+                </button>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="row g-2">
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="water">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">💧</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">Bottled Water</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">3 liters per person</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="firstaid">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">🩹</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">First Aid Kit</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">Bandages, antiseptic, meds</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="flashlight">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">🔦</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">LED Flashlight</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">With spare dry batteries</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="whistle">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">📢</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">Emergency Whistle</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">High-decibel rescue signal</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="powerbank">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">🔋</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">Power Bank & Cable</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">Fully charged for emergency comms</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="food">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">🥫</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">Dry Food Rations</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">Energy bars, non-perishable</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="docs">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">📄</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">Important Documents</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">IDs & contact cards in zip bag</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="kit-item-box d-flex align-items-center justify-content-between" data-item-id="mask">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">😷</span>
+                                <div>
+                                    <div class="fw-semibold small text-white">Dust Mask / Scarf</div>
+                                    <div class="text-secondary small" style="font-size:0.75rem;">Filters smoke and dust particles</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-circle text-secondary fs-5 kit-check-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Student Hub (Quiz & Helpline Callouts) -->
+    <section class="mb-5">
+        <div class="row g-4">
+            <!-- Quiz Hub Card -->
+            <div class="col-md-6">
+                <div class="hub-card h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <span class="comfort-glyph mb-0 text-amber">
+                            <i class="bi bi-patch-question-fill"></i>
+                        </span>
+                        <div>
+                            <span class="comfort-pill comfort-pill-amber mb-1">Interactive Challenge</span>
+                            <h3 class="h4 fw-bold text-white mb-0">Disaster Safety Quiz</h3>
+                        </div>
+                    </div>
+                    <p class="text-secondary small flex-grow-1" style="line-height: 1.6;">
+                        Strengthen your safety instincts with our 12-question comprehensive evaluation across earthquakes, floods, fires, and cyclones. Instant feedback explains why each response protects lives.
+                    </p>
+                    <div class="pt-3 border-top border-secondary-subtle d-flex align-items-center justify-content-between">
+                        <span class="text-secondary small"><i class="bi bi-clock me-1"></i> 12 Questions &bull; 4 Disasters</span>
+                        <a asp-controller="Home" asp-action="Quiz" class="btn btn-amber-glow btn-sm fw-semibold px-4 py-2 rounded-pill">
+                            Take the Quiz &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helpline Hub Card -->
+            <div class="col-md-6">
+                <div class="hub-card h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <span class="comfort-glyph mb-0 text-danger">
+                            <i class="bi bi-telephone-outbound-fill"></i>
+                        </span>
+                        <div>
+                            <span class="comfort-pill comfort-pill-red mb-1">Emergency Protocols</span>
+                            <h3 class="h4 fw-bold text-white mb-0">Emergency Directory</h3>
+                        </div>
+                    </div>
+                    <p class="text-secondary small flex-grow-1" style="line-height: 1.6;">
+                        Quick reference directory for National Emergency response <strong>112</strong>, disaster management rescue teams (NDRF), and campus emergency coordinators.
+                    </p>
+                    <div class="pt-3 border-top border-secondary-subtle d-flex align-items-center justify-content-between">
+                        <span class="text-secondary small"><i class="bi bi-shield-check text-success me-1"></i> 24/7 Verified</span>
+                        <a asp-controller="Home" asp-action="Emergency" class="btn btn-outline-light btn-sm fw-semibold px-4 py-2 rounded-pill border-secondary-subtle">
+                            View Helplines &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Calm Advisory Note -->
+    <section class="p-4 rounded-4 bg-dark-card border border-secondary-subtle mb-4">
+        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3">
+            <div class="fs-2 text-amber">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <div class="flex-grow-1">
+                <h4 class="h6 fw-bold text-white mb-1">A Calm Reminder for Campus Communities</h4>
+                <p class="text-secondary small mb-0">
+                    Disaster preparedness is about routine confidence, not panic. Knowing building exits, keeping communication lines open, and understanding basic safety postures ensures everyone stays safe.
+                </p>
+            </div>
+            <a asp-controller="Home" asp-action="Learn" asp-route-topic="earthquake" class="btn btn-sm btn-outline-secondary rounded-pill px-4 text-nowrap">
+                Start Learning
+            </a>
+        </div>
+    </section>
+
+</div>
